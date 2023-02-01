@@ -69,6 +69,12 @@ export default {
       margin-left: auto;
     }
 
+    &.accent {
+      padding-left: 15px;
+      padding-right: 15px;
+      background: #0078f2;
+    }
+
     li {
       display: flex;
       height: 52px;
@@ -89,13 +95,6 @@ export default {
           color: @cyberColor;
         }
       }
-
-      &.accent {
-        padding-left: 15px;
-        padding-right: 15px;
-        background: #0078f2;
-      }
-
     }
   }
 }
