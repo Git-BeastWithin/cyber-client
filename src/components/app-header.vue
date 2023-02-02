@@ -1,5 +1,5 @@
 <template>
-  <header class='app-header'>
+  <header class='app-header' :class="{ top: y >= 52}">
     <div class="container">
       <div class="search">
         <i class="iconfont icon-icon-test12"></i>
@@ -22,13 +22,26 @@
 </template>
 
 <script>
+import { useWindowScroll } from '@vueuse/core'
+
 export default {
-  name: 'AppHeader'
+  name: 'AppHeader',
+  setup () {
+    const { y } = useWindowScroll()
+    return { y }
+  }
 }
 </script>
 
 <style scoped lang="less">
 .app-header {
+  &.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
   background: #121212;
   height: 100px;
 
@@ -80,6 +93,7 @@ export default {
         &:hover {
           a {
             color: @cyberColor;
+
             i {
               color: @cyberColor;
             }
@@ -105,6 +119,7 @@ export default {
 
         &:hover {
           color: @cyberColor;
+
           i {
             color: @cyberColor;
           }

@@ -22,6 +22,6 @@ export default {
 
 <style scoped lang='less'>
 .app-body {
-  min-height: 600px;
+  min-height: 2000px;
 }
 </style>
